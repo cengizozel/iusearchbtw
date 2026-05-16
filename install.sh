@@ -81,12 +81,19 @@ yay -S --noconfirm \
     vscodium-bin \
     npm \
     ollama-cuda \
-    proton-vpn-cli
+    proton-vpn-cli \
+    rofi-wayland \
+    ttf-iosevka-nerd
 
 echo "==> Cloning dotfiles"
 git clone https://github.com/cengizozel/iusearchbtw.git ~/dotfiles
 
 echo "==> Linking configs"
+mkdir -p ~/.config/rofi/basefiles ~/.config/rofi/colors
+ln -sf ~/dotfiles/rofi/config.rasi ~/.config/rofi/config.rasi
+ln -sf ~/dotfiles/rofi/basefiles/fonts.rasi ~/.config/rofi/basefiles/fonts.rasi
+ln -sf ~/dotfiles/rofi/colors/tokyonight.rasi ~/.config/rofi/colors/tokyonight.rasi
+
 mkdir -p ~/.config/hypr/scripts
 ln -sf ~/dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 ln -sf ~/dotfiles/hypr/scripts/swap-enter.sh ~/.config/hypr/scripts/swap-enter.sh
