@@ -60,6 +60,7 @@ yay -S --noconfirm \
     wireplumber \
     wofi \
     wpa_supplicant \
+    waybar \
     xdg-desktop-portal-hyprland \
     xdg-utils \
     zram-generator
@@ -77,6 +78,10 @@ chmod +x ~/dotfiles/hypr/scripts/*.sh
 
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+
+mkdir -p ~/.config/waybar
+ln -sf ~/dotfiles/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -sf ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
 
 mkdir -p ~/.claude
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
