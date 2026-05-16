@@ -81,7 +81,6 @@ yay -S --noconfirm \
     vscodium-bin \
     npm \
     ollama-cuda \
-    proton-vpn-gtk-app \
     proton-vpn-cli
 
 echo "==> Cloning dotfiles"
