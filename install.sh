@@ -83,7 +83,11 @@ yay -S --noconfirm \
     ollama-cuda \
     proton-vpn-cli \
     rofi-wayland \
-    ttf-iosevka-nerd
+    ttf-iosevka-nerd \
+    nwg-look \
+    kvantum \
+    qt6ct \
+    tokyonight-gtk-theme-git
 
 echo "==> Cloning dotfiles"
 git clone https://github.com/cengizozel/iusearchbtw.git ~/dotfiles
@@ -121,6 +125,14 @@ ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
 mkdir -p ~/.config/VSCodium/User
 ln -sf ~/dotfiles/vscodium/settings.json ~/.config/VSCodium/User/settings.json
+
+mkdir -p ~/.config/Kvantum/Kvantum-Tokyo-Night
+ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig
+ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg
+ln -sf ~/dotfiles/Kvantum/kvantum.kvconfig ~/.config/Kvantum/kvantum.kvconfig
+
+mkdir -p ~/.config/qt6ct
+ln -sf ~/dotfiles/qt6ct/qt6ct.conf ~/.config/qt6ct/qt6ct.conf
 
 echo "==> Configuring NoiseTorch"
 sudo setcap 'CAP_SYS_RESOURCE=+ep' ~/.local/bin/noisetorch
