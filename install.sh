@@ -60,6 +60,7 @@ yay -S --noconfirm \
     wireplumber \
     wofi \
     wpa_supplicant \
+    hyprpaper \
     ttf-hack-nerd \
     waybar \
     xdg-desktop-portal-hyprland \
@@ -79,6 +80,9 @@ chmod +x ~/dotfiles/hypr/scripts/*.sh
 
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+
+mkdir -p ~/.config/hypr
+ln -sf ~/dotfiles/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 
 mkdir -p ~/.config/kitty
 ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
