@@ -1,0 +1,88 @@
+#!/bin/bash
+set -e
+
+echo "==> Installing yay (AUR helper)"
+sudo pacman -S --needed --noconfirm git base-devel
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ~
+
+echo "==> Installing packages"
+yay -S --noconfirm \
+    amd-ucode \
+    base \
+    base-devel \
+    dkms \
+    dolphin \
+    dunst \
+    efibootmgr \
+    fastfetch \
+    git \
+    grim \
+    gst-plugin-pipewire \
+    htop \
+    hyprland \
+    hyprlauncher \
+    hyprshutdown \
+    kitty \
+    libpulse \
+    librewolf-bin \
+    libva-nvidia-driver \
+    linux \
+    linux-firmware \
+    linux-headers \
+    linux-lts \
+    linux-lts-headers \
+    neovim \
+    network-manager-applet \
+    networkmanager \
+    nvidia-open-dkms \
+    pipewire \
+    pipewire-alsa \
+    pipewire-jack \
+    pipewire-pulse \
+    polkit-kde-agent \
+    qt5-wayland \
+    qt6-wayland \
+    reflector \
+    rsync \
+    sddm \
+    signal-desktop \
+    slurp \
+    smartmontools \
+    speedtest-cli \
+    sudo \
+    uwsm \
+    vim \
+    wget \
+    wireplumber \
+    wofi \
+    wpa_supplicant \
+    xdg-desktop-portal-hyprland \
+    xdg-utils \
+    zram-generator
+
+echo "==> Cloning dotfiles"
+git clone https://github.com/cengizozel/iusearchbtw.git ~/dotfiles
+
+echo "==> Linking configs"
+mkdir -p ~/.config/hypr/scripts
+ln -sf ~/dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -sf ~/dotfiles/hypr/scripts/swap-enter.sh ~/.config/hypr/scripts/swap-enter.sh
+ln -sf ~/dotfiles/hypr/scripts/swap-do.sh ~/.config/hypr/scripts/swap-do.sh
+ln -sf ~/dotfiles/hypr/scripts/swap-cancel.sh ~/.config/hypr/scripts/swap-cancel.sh
+chmod +x ~/dotfiles/hypr/scripts/*.sh
+
+mkdir -p ~/.config/nvim
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+
+mkdir -p ~/.claude
+ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
+
+echo "==> Enabling services"
+sudo systemctl enable --now NetworkManager
+sudo systemctl enable sddm
+
+echo "==> Done! Reboot to finish setup."
