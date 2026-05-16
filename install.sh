@@ -107,6 +107,8 @@ mkdir -p ~/.config/waybar
 ln -sf ~/dotfiles/waybar/config.jsonc ~/.config/waybar/config.jsonc
 ln -sf ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
 
+ln -sf ~/dotfiles/bashrc ~/.bashrc
+
 mkdir -p ~/.claude
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
