@@ -63,6 +63,8 @@ yay -S --noconfirm \
     vim \
     wget \
     wireplumber \
+    noisetorch \
+    pavucontrol \
     wofi \
     wpa_supplicant \
     hyprpaper \
@@ -101,6 +103,9 @@ ln -sf ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
 
 mkdir -p ~/.claude
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
+
+echo "==> Configuring NoiseTorch"
+sudo setcap 'CAP_SYS_RESOURCE=+ep' ~/.local/bin/noisetorch
 
 echo "==> Enabling services"
 sudo systemctl enable --now NetworkManager
