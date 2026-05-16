@@ -75,7 +75,14 @@ yay -S --noconfirm \
     waybar \
     xdg-desktop-portal-hyprland \
     xdg-utils \
-    zram-generator
+    zram-generator \
+    discord \
+    flatpak \
+    vscodium-bin \
+    npm \
+    ollama-cuda \
+    proton-vpn-gtk-app \
+    proton-vpn-cli
 
 echo "==> Cloning dotfiles"
 git clone https://github.com/cengizozel/iusearchbtw.git ~/dotfiles
@@ -104,11 +111,15 @@ ln -sf ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
 mkdir -p ~/.claude
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
+mkdir -p ~/.config/VSCodium/User
+ln -sf ~/dotfiles/vscodium/settings.json ~/.config/VSCodium/User/settings.json
+
 echo "==> Configuring NoiseTorch"
 sudo setcap 'CAP_SYS_RESOURCE=+ep' ~/.local/bin/noisetorch
 
 echo "==> Enabling services"
 sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now proton-vpn-daemon
 sudo systemctl enable sddm
 
 echo "==> Done! Reboot to finish setup."
