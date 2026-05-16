@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+echo "==> Enabling multilib repository"
+sed -i 's/#\[multilib\]/[multilib]/' /etc/pacman.conf
+sed -i '/\[multilib\]/{n;s/#Include/Include/}' /etc/pacman.conf
+sudo pacman -Sy --noconfirm
+
 echo "==> Installing yay (AUR helper)"
 sudo pacman -S --needed --noconfirm git base-devel
 cd /tmp
@@ -61,6 +66,9 @@ yay -S --noconfirm \
     wofi \
     wpa_supplicant \
     hyprpaper \
+    lib32-nvidia-utils \
+    lib32-vulkan-icd-loader \
+    steam \
     ttf-hack-nerd \
     waybar \
     xdg-desktop-portal-hyprland \
