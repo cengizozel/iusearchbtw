@@ -20,7 +20,7 @@ yay -S --noconfirm \
     base \
     base-devel \
     dkms \
-    dolphin \
+    yazi \
     dunst \
     efibootmgr \
     fastfetch \
