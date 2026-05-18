@@ -123,9 +123,6 @@ ln -sf ~/dotfiles/bashrc ~/.bashrc
 mkdir -p ~/.claude
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
-mkdir -p ~/.config/VSCodium/User
-ln -sf ~/dotfiles/vscodium/settings.json ~/.config/VSCodium/User/settings.json
-
 mkdir -p ~/.config/Kvantum/Kvantum-Tokyo-Night
 ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig
 ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg
