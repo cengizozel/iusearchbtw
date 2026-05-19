@@ -21,7 +21,7 @@ yay -S --noconfirm \
     base-devel \
     dkms \
     yazi \
-    dunst \
+    swaync \
     efibootmgr \
     fastfetch \
     git \
@@ -114,9 +114,17 @@ ln -sf ~/dotfiles/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 mkdir -p ~/.config/kitty
 ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-mkdir -p ~/.config/waybar
+mkdir -p ~/.config/waybar/layouts ~/.config/waybar/scripts ~/.config/waybar/colors ~/.config/waybar/context
 ln -sf ~/dotfiles/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -sf ~/dotfiles/waybar/modules.jsonc ~/.config/waybar/modules.jsonc
 ln -sf ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
+ln -sf ~/dotfiles/waybar/layouts/with_music.jsonc ~/.config/waybar/layouts/with_music.jsonc
+ln -sf ~/dotfiles/waybar/scripts/network.py ~/.config/waybar/scripts/network.py
+ln -sf ~/dotfiles/waybar/scripts/visualizer.py ~/.config/waybar/scripts/visualizer.py
+
+mkdir -p ~/.config/swaync
+ln -sf ~/dotfiles/swaync/config.json ~/.config/swaync/config.json
+ln -sf ~/dotfiles/swaync/style.css ~/.config/swaync/style.css
 
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 
