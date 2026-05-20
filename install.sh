@@ -139,6 +139,10 @@ ln -sf ~/dotfiles/Kvantum/kvantum.kvconfig ~/.config/Kvantum/kvantum.kvconfig
 mkdir -p ~/.config/qt6ct
 ln -sf ~/dotfiles/qt6ct/qt6ct.conf ~/.config/qt6ct/qt6ct.conf
 
+mkdir -p ~/.local/bin
+ln -sf ~/dotfiles/bin/rofi-click-away ~/.local/bin/rofi-click-away
+chmod +x ~/dotfiles/bin/rofi-click-away
+
 echo "==> Configuring NoiseTorch"
 sudo setcap 'CAP_SYS_RESOURCE=+ep' ~/.local/bin/noisetorch
 
