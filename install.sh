@@ -84,9 +84,6 @@ yay -S --noconfirm \
     proton-vpn-cli \
     rofi-wayland \
     ttf-iosevka-nerd \
-    nwg-look \
-    kvantum \
-    qt6ct \
     tokyonight-gtk-theme-git
 
 echo "==> Cloning dotfiles"
@@ -128,16 +125,7 @@ ln -sf ~/dotfiles/swaync/style.css ~/.config/swaync/style.css
 
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 
-mkdir -p ~/.claude
-ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 
-mkdir -p ~/.config/Kvantum/Kvantum-Tokyo-Night
-ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.kvconfig
-ln -sf ~/dotfiles/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg ~/.config/Kvantum/Kvantum-Tokyo-Night/Kvantum-Tokyo-Night.svg
-ln -sf ~/dotfiles/Kvantum/kvantum.kvconfig ~/.config/Kvantum/kvantum.kvconfig
-
-mkdir -p ~/.config/qt6ct
-ln -sf ~/dotfiles/qt6ct/qt6ct.conf ~/.config/qt6ct/qt6ct.conf
 
 mkdir -p ~/.local/bin
 ln -sf ~/dotfiles/bin/rofi-click-away ~/.local/bin/rofi-click-away
